@@ -1,0 +1,55 @@
+origin: decide_to_talk_v2.txt
+
+<commentblockmarker>###</commentblockmarker>
+Task -- given scene, classify the event into one of the following: 1) whether the subject is eating food ("eat"); 2) taking other people's food ("take"); 3) giving his own food to other ("give") 4) None of the aboved ("other").
+
+Requirement:
+Focus on what is currently doing, not future or past.
+Eating other people's food count as take.
+Stealing other's food but not eat count only as take.
+Cooking one's own food to others count as give.
+Judgement should base on explicit information, rather than indication.
+Serving customers does not count as give, it's just business.
+Drink doesnt count as food
+
+Format: 
+Scene: []
+Question: []
+Reasoning: []
+Answer: []
+---
+Scene:  
+Right now, it is !<INPUT 0>!.
+!<INPUT 1>!
+Question: Let's think step by step. Of the following four options, which one describe !<INPUT 2>! best? (answer only in json format as provided; quantity defaults to 1; consider only the following target people: !<INPUT 3>!)
+    Option 1:
+        {
+            "type": "eat",
+            "quantity": <the number>
+        }
+    Option 2:
+        {
+            "type": "take",
+            "quantity": <the number>,
+            "target": <the full name of the target people>
+        }
+    Option 3:
+        {
+            "type": "give",
+            "quantity": <the number>,
+            "target": <the full name of the target people>
+        }
+    Option 4:
+        {
+            "type": "other"
+        }
+
+
+
+=== output example ===
+
+Reasoning: <Model should provide its reasoning here.>
+Answer:
+{
+    <Model should provide the answer in JSON format, adhering strictly to the specified structure.>
+}

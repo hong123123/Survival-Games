@@ -1,0 +1,60 @@
+origin: decide_to_talk_v2.txt
+
+Context: !<INPUT 0>!
+Right now, it is !<INPUT 1>!. 
+!<INPUT 2>! 
+!<INPUT 3>! 
+My question: Let's think step by step. Of the following three options, what should !<INPUT 4>! do?
+Option 1: Wait on !<INPUT 5>! until !<INPUT 6>! is done !<INPUT 7>!
+Option 2: Continue on to !<INPUT 8>! now
+Reasoning: 
+
+<commentblockmarker>###</commentblockmarker>
+Task -- given context, classify the event into one of the following: 1) whether the subject is eating food ("eat"); 2) taking other people's food ("take"); 3) giving his own food to other ("give") 4) combination of the aboved ("combine"); 5) None of the aboved ("other").
+focus on what is currently doing, not future or past. Eating other people's food count as take + eat. Stealing other's food but not eat count only as take. Judgement should base on explicit information. Serving customers does not count as give, it's just business.
+Format: 
+Context: []
+Question: []
+Reasoning: []
+Answer: []
+---
+Context: !<INPUT 0>! 
+Right now, it is !<INPUT 1>!.
+!<INPUT 2>!
+Question: Let's think step by step. Of the following four options, which one describe !<INPUT 3>! best? (answer only in json format as provided; quantity defaults to 1; consider only the following target people: !<INPUT 4>!)
+    Option 1:
+        {
+            "type": "eat",
+            "quantity": <the number infered from the context>
+        }
+    Option 2:
+        {
+            "type": "take",
+            "quantity": <the number infered from the context>,
+            "target": <the full name of the target people>
+        }
+    Option 3:
+        {
+            "type": "give",
+            "quantity": <the number infered from the context>,
+            "target": <the full name of the target people>
+        }
+    Option 4:
+        [
+            {
+                "type": "take",
+                "quantity": <the number infered from the context>,
+                "target": <the full name of the target people>
+            },
+            {
+                "type": "eat",
+                "quantity": <the number infered from the context>
+            },
+            ...
+        ]
+    Option 5:
+        {
+            "type": "other"
+        }
+
+Reasoning:
