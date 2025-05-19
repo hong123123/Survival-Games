@@ -1,4 +1,4 @@
-# GenerativeMoral
+# Survival Games: Human-LLM Strategic Showdowns under Severe Resource Scarcity
 Moral benchmark for generative agents
 
 <div align="center">
