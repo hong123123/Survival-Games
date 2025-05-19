@@ -1,5 +1,12 @@
 # GenerativeMoral
 Moral benchmark for generative agents
+
+<div align="center">
+
+![alt text](main.jpg "main figure")
+
+</div>
+
 ## Installation
 ```bash
 pip install -r requirements.txt
@@ -62,8 +69,8 @@ The puppetry attack experiment setting is applied by the following two parameter
 ```bash
 --eat_failsafe --policy_puppetry
 ```
+Here is an example
 ```bash
-# Here is an example
 cd reverie/backend_server
 python reverie_offline.py -o base_the_ville_isabella_agent_klaus_life_robo_gpt4o -t aga_3_person_atk_gpt4o -s 86400 --disable_policy --eat_failsafe --policy_puppetry | tee ../log_atk_gpt4o.txt
 ```
@@ -71,14 +78,19 @@ python reverie_offline.py -o base_the_ville_isabella_agent_klaus_life_robo_gpt4o
 ```bash
 --test_extreme
 ```
+Here is an example
 ```bash
-# Here is an example
 cd reverie/backend_server
 python reverie_offline.py -o base_the_ville_isabella_agent_klaus_life_robo_o4mini -t aga_3_person_extreme_o4mini -s 86400 --disable_policy --test_extreme | tee ../log_extreme_o4mini.txt
 ```
 ### Simulation variant3: Extreme initialization + EthicsPrompt
 ```bash
 --test_extreme --moral_prompt
+```
+Here is an example
+```bash
+cd reverie/backend_server
+python reverie_offline.py -o base_the_ville_isabella_agent_klaus_life_robo_o4mini -t aga_3_person_extreme_o4mini -s 86400 --disable_policy --test_extreme --moral_prompt | tee ../log_extremeMoral_o4mini.txt
 ```
 ## Statistics
 ### 1. Compressing game data
