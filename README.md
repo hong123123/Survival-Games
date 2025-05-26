@@ -7,6 +7,19 @@ Moral benchmark for generative agents
 
 </div>
 
+## Citation
+```bash
+@misc{chen2025survivalgameshumanllmstrategic,
+      title={Survival Games: Human-LLM Strategic Showdowns under Severe Resource Scarcity}, 
+      author={Zhihong Chen and Yiqian Yang and Jinzhao Zhou and Qiang Zhang and Chin-Teng Lin and Yiqun Duan},
+      year={2025},
+      eprint={2505.17937},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      url={https://arxiv.org/abs/2505.17937}, 
+}
+```
+
 ## Installation
 ```bash
 pip install -r requirements.txt
